@@ -8,4 +8,12 @@ server.use(helmet());
 server.use(corse());
 server.use(express.json());
 
+const issuesRouter = require("../issues/issues-router");
+
+server.get("/", (req, res) => {
+    res.send("Aii")
+})
+
+server.use("/api", issuesRouter);
+
 module.exports = server;
