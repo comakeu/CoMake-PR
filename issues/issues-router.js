@@ -3,7 +3,7 @@ const issues = require("./issues-model");
 
 router.get("/issues", async (req, res) => {
     try {
-        let result = await issues.get();
+        const result = await issues.get();
         return res.status(200).json(result)
     }catch (error) {
         return res.status(500).json({
@@ -13,9 +13,9 @@ router.get("/issues", async (req, res) => {
     }
 })
 
-router.post("/issues", (req, res) => {
+router.post("/issues", async (req, res) => {
     try {
-        let result = await issues.insert(req.body);
+        const [result] = await issues.insert(req.body);
         return res.status(201).json(result)
     }catch (error) {
         return res.status(500).json({
