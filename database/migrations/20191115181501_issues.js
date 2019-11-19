@@ -7,7 +7,7 @@ exports.up = function(knex) {
     tbl.float("longitude").notNullable();
     tbl.string("username").notNullable();
     tbl.string("imgURL").notNullable();
-    tbl.integer("votes").notNullable().unsigned();
+    tbl.integer("votes").unsigned().defaultTo(0);
   })
 };
 
