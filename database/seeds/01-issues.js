@@ -11,6 +11,7 @@ for(let i = 0; i < 25; i++){
       latitude: faker.address.latitude(),
       longitude: faker.address.longitude(),
       imgURL: faker.image.city(),
+      votes: Math.floor(Math.random() * 200) + 1
     }
   )
 }
